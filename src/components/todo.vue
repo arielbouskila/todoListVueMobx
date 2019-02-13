@@ -4,7 +4,7 @@
     <li><button @click="removeTodo(todo.id)">X</button><span @click='todo.isDone=!todo.isDone' :class="{'dashed':todo.isDone}">{{todo.title}}</span></li>
 </ul>
 <div>
-    <input type="text" placeholder="New title" v-model="title"/>
+    <input type="text" placeholder="New Task" v-model="title" @keyup.enter="addNewTodo()"/>
     <br/>
     <button @click="addNewTodo()" :disabled="title===''">Add</button>
 </div>
@@ -19,15 +19,27 @@
 <script>
 import { observer } from "mobx-vue";
 import TodoList from '@/store/todoList';
+import Vue from 'vue';
+
+Vue.config.keyCodes.atsign = 50;
+
 export default observer({
     name:'todo',
     data(){
         return {title:'',vm:new TodoList(),disabled:false}
     },
     methods:{
+        triggerNewTodo(e){
+            if(e.keyCode === 13){
+                this.addNewTodo();
+            }
+        },
         addNewTodo(){
-            this.vm.addTodo(this.title);
-            this.title='';
+            if(this.title!==''){
+                this.vm.addTodo(this.title);
+                this.title='';
+            }
+            
         },
         removeTodo(id){
             this.vm.removeTodo(id);
