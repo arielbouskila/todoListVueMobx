@@ -11,4 +11,5 @@ export default class TodoList{
     addTodo(title){
         this.todos.push(new Todo(title));
     }
+    
 }
