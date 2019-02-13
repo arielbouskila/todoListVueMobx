@@ -1,6 +1,6 @@
 <template>
 <section>
-<ul v-for="todo in list.todos" :key="todo.key" class="task-list">
+<ul v-for="todo in vm.todos" :key="todo.key" class="task-list">
     <li><span @click='todo.isDone=!todo.isDone' :class="{'dashed':todo.isDone}">{{todo.title}}</span></li>
 </ul>
 <div>
@@ -9,22 +9,22 @@
     <button @click="addNewTodo()">Add</button>
 </div>
 <div>
-    Task not finished {{ this.list.undones}}
+    Task not finished {{ this.vm.undones}}
 </div>
 </section>
 </template>
 <script>
 import { computed } from 'mobx';
 import { observer } from "mobx-vue";
+import TodoList from '@/store/todoList';
 export default observer({
     name:'todo',
-    props:['list'],
     data(){
-        return {title:''}
+        return {title:'',vm:new TodoList()}
     },
     methods:{
         addNewTodo(){
-            this.list.addTodo(this.title);
+            this.vm.addTodo(this.title);
             this.title='';
         }
     }

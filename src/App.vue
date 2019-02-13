@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
-    <todo :list='todos' :undones='todos.unDoneTodosCount'/>
+    <todo/>
   </div>
 </template>
 
@@ -12,9 +12,6 @@ export default {
   name: 'app',
   components: {
     todo
-  },
-  data(){
-    return {todos:new TodoList()}
   }
 }
 </script>
