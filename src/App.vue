@@ -7,6 +7,10 @@
 
 <script>
 import todo from './components/todo';
+<<<<<<< HEAD
+=======
+import TodoList from '@/store/todoList';
+>>>>>>> b7ec067a6122d5b1093f3f8982aa1dfdbb18e051
 export default {
   name: 'app',
   components: {

@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 # todos
 
+=======
+# todoListVueMobx
+Simple Todo list in vue + mobx
+>>>>>>> b7ec067a6122d5b1093f3f8982aa1dfdbb18e051
 ## Project setup
 ```
 npm install
@@ -24,6 +29,9 @@ npm run test
 ```
 npm run lint
 ```
+<<<<<<< HEAD
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+=======
+>>>>>>> b7ec067a6122d5b1093f3f8982aa1dfdbb18e051

@@ -11,5 +11,8 @@ export default class TodoList{
     addTodo(title){
         this.todos.push(new Todo(title));
     }
+<<<<<<< HEAD
     
+=======
+>>>>>>> b7ec067a6122d5b1093f3f8982aa1dfdbb18e051
 }
