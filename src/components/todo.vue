@@ -6,7 +6,6 @@
 <div>
     <input type="text" placeholder="New title" v-model="title"/>
     <br/>
-<<<<<<< HEAD
     <button @click="addNewTodo()" :disabled="title===''">Add</button>
 </div>
 <div v-if="this.vm.undones>0">
@@ -18,27 +17,12 @@
 </section>
 </template>
 <script>
-=======
-    <button @click="addNewTodo()">Add</button>
-</div>
-<div>
-    Task not finished {{ this.vm.undones}}
-</div>
-</section>
-</template>
-<script>
-import { computed } from 'mobx';
->>>>>>> b7ec067a6122d5b1093f3f8982aa1dfdbb18e051
 import { observer } from "mobx-vue";
 import TodoList from '@/store/todoList';
 export default observer({
     name:'todo',
     data(){
-<<<<<<< HEAD
         return {title:'',vm:new TodoList(),disabled:false}
-=======
-        return {title:'',vm:new TodoList()}
->>>>>>> b7ec067a6122d5b1093f3f8982aa1dfdbb18e051
     },
     methods:{
         addNewTodo(){
