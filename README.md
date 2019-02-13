@@ -1,4 +1,7 @@
-# todos
+# Yet another todo list project in vue with MOBX as a store management
+```
+I didnt see a lot of projects which demonstrate the usage of vue + mobx so... here is one .
+```
 
 ## Project setup
 ```
