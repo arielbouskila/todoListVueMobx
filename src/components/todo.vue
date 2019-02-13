@@ -1,7 +1,7 @@
 <template>
 <section>
 <ul v-for="todo in vm.todos" :key="todo.key" class="task-list">
-    <li><span @click='todo.isDone=!todo.isDone' :class="{'dashed':todo.isDone}">{{todo.title}}</span></li>
+    <li><button @click="removeTodo(todo.id)">X</button><span @click='todo.isDone=!todo.isDone' :class="{'dashed':todo.isDone}">{{todo.title}}</span></li>
 </ul>
 <div>
     <input type="text" placeholder="New title" v-model="title"/>
@@ -28,6 +28,9 @@ export default observer({
         addNewTodo(){
             this.vm.addTodo(this.title);
             this.title='';
+        },
+        removeTodo(id){
+            this.vm.removeTodo(id);
         }
     }
 });

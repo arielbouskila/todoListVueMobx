@@ -11,4 +11,8 @@ export default class TodoList{
     addTodo(title){
         this.todos.push(new Todo(title));
     }
+    @action.bound
+    removeTodo(id){
+        this.todos = this.todos.filter(item=>item.id!==id);
+    }
 }
