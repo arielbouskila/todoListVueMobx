@@ -16,3 +16,4 @@ export default class TodoList{
         this.todos = this.todos.filter(item=>item.id!==id);
     }
 }
+export const store = new TodoList();
