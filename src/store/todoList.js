@@ -7,11 +7,11 @@ export default class TodoList{
     get undones(){
         return this.todos.filter(todo => !todo.isDone).length;
     } 
-    @action.bound
+    @action
     addTodo(title){
         this.todos.push(new Todo(title));
     }
-    @action.bound
+    @action
     removeTodo(id){
         this.todos = this.todos.filter(item=>item.id!==id);
     }

@@ -15,6 +15,7 @@
     No tasks!
     </div>
     </section>
+   
 </template>
 
 <script>
@@ -29,20 +30,14 @@ export default observer({
     return { title: "", disabled: false,vm:store };
   },
   methods: {
-    triggerNewTodo(e) {
-      if (e.keyCode === 13) {
-        store.addNewTodo();
-      }
-    },
     addNewTodo() {
       if (this.title !== "") {
-        store.addTodo(this.title);
+        this.vm.addTodo(this.title);
         this.title = "";
       }
     }
   }
 });
 </script>
-
 <style>
 </style>
